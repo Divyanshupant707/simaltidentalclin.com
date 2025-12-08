@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simalti Dental Clinic - Best Dental Clinic in Mehuwala, Dehradun. Specialized in Root Canals, Implants, and Pediatric Dentistry.">
+    <title>Simalti Dental Clinic | Dehradun</title>
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-blue: #2CB9E6; 
+            --dark-blue: #003366;    
+            --text-grey: #555;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { width: 100%; display: block; }
+        button { cursor: pointer; font-family: inherit; }
+
+        /* --- HEADER --- */
+        .top-bar {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .logo-section { display: flex; flex-direction: column; }
+        .logo-section h1 {
+            color: var(--dark-blue);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .logo-section span { font-size: 11px; color: var(--text-grey); letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
+        
+        .contact-info { display: flex; gap: 30px; }
+        .contact-item { display: flex; align-items: center; gap: 10px; }
+        .contact-item i { color: var(--primary-blue); font-size: 24px; }
+        .contact-text { display: flex; flex-direction: column; }
+        .contact-text h4 { font-size: 12px; color: var(--text-grey); font-weight: 600; text-transform: uppercase; }
+        .contact-text p { font-size: 14px; font-weight: 700; color: var(--dark-blue); }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: var(--white);
+            padding: 0 5%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 70px;
+        }
+        .nav-links { display: flex; align-items: center; height: 100%; }
+        .nav-links li a {
+            display: block;
+            padding: 0 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #444;
+            text-transform: uppercase;
+            line-height: 70px;
+        }
+        .nav-links li a:hover { color: var(--primary-blue); }
+        .appt-btn-nav {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 15px;
+            transition: background 0.3s;
+        }
+        .appt-btn-nav:hover { background: var(--dark-blue); color: white; }
+
+        .menu-toggle { display: none; font-size: 24px; color: var(--dark-blue); cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .hero-content { max-width: 650px; animation: fadeIn 1s ease-in; }
+        .hero-content h2 { 
+            font-size: 42px; 
+            color: var(--dark-blue); 
+            margin-bottom: 25px; 
+            line-height: 1.2; 
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-content span { color: var(--primary-blue); }
+        .hero-btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 2px;
+            display: inline-block;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(44, 185, 230, 0.4);
+        }
+        .hero-btn:hover { background: var(--dark-blue); transform: translateY(-2px); }
+
+        /* --- INTRO SECTION --- */
+        .intro { padding: 80px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--white); align-items: center; }
+        .intro-img { 
+            position: relative; 
+            border-radius: 5px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .intro-img img { transition: transform 0.5s; }
+        .intro-img:hover img { transform: scale(1.05); }
+        
+        .intro-text h2 { font-size: 32px; margin-bottom: 20px; color: #333; font-family: 'Playfair Display', serif; }
+        .intro-text p { color: #666; margin-bottom: 20px; font-size: 16px; }
+        
+        .query-box { 
+            background: #f0f8ff; 
+            padding: 30px; 
+            border-left: 5px solid var(--primary-blue); 
+            margin-top: 20px;
+        }
+        .query-box h3 { font-size: 18px; margin-bottom: 10px; color: var(--dark-blue); }
+        .query-box p { font-size: 13px; font-weight: 700; color: #555; text-transform: uppercase; margin-bottom: 15px;}
+        .enquire-btn {
+            background: transparent;
+            border: 2px solid var(--dark-blue);
+            color: var(--dark-blue);
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .enquire-btn:hover { background: var(--dark-blue); color: white; }
+
+        /* --- SERVICES SECTION --- */
+        .services { padding: 80px 5%; text-align: center; background: var(--bg-light); }
+        .section-header { margin-bottom: 50px; }
+        .section-title { font-size: 36px; color: var(--dark-blue); font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .underline { width: 60px; height: 3px; background: var(--primary-blue); margin: 0 auto; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { 
+            background: var(--white); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            text-align: left; 
+            transition: transform 0.3s; 
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card img { height: 220px; object-fit: cover; }
+        .service-info { padding: 25px; }
+        .service-info h3 { color: var(--dark-blue); margin-bottom: 10px; font-size: 20px; }
+        .service-info p { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.7; }
+        .read-more { color: var(--primary-blue); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+        .read-more:hover { color: var(--dark-blue); cursor: pointer;}
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section { padding: 80px 5%; background: var(--white); text-align: center; }
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; 
+            margin-top: 40px; 
+        }
+        .gallery-item { height: 250px; overflow: hidden; border-radius: 5px; cursor: pointer; position: relative; }
+        .gallery-item img { height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials { padding: 80px 5%; text-align: center; background: url('https://www.transparenttextures.com/patterns/cubes.png'), #f8f9fa; }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testi-card { 
+            background: var(--white); 
+            padding: 40px 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            position: relative;
+        }
+        .testi-card.featured { background: var(--primary-blue); color: white; transform: scale(1.05); z-index: 2; }
+        .testi-card.featured .client-loc { color: #e0e0e0; }
+        .testi-card.featured i { color: rgba(255,255,255,0.3); }
+
+        .flag-img { width: 40px; margin-bottom: 15px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .quote-icon { font-size: 30px; color: #eee; position: absolute; top: 20px; right: 20px; }
+        .testi-card p { font-style: italic; font-size: 15px; margin-bottom: 20px; z-index: 1; position: relative; }
+        .client-name { font-weight: 700; display: block; text-transform: uppercase; font-size: 14px; margin-bottom: 5px;}
+        .client-loc { font-size: 12px; color: #888; }
+
+        /* --- FOOTER --- */
+        footer { background: #111; color: #bbb; padding: 70px 5% 20px; font-size: 14px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        
+        .footer-logo h2 { color: white; font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; }
+        .footer-col h3 { color: white; margin-bottom: 25px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a:hover { color: var(--primary-blue); padding-left: 5px; }
+        
+        .contact-details p { margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start; }
+        .contact-details i { color: var(--primary-blue); margin-top: 4px; flex-shrink: 0;}
+
+        /* Map Container updated to avoid broken image */
+        .map-container { width: 100%; height: 200px; border-radius: 5px; overflow: hidden; margin-top: 20px; background: #333; }
+        
+        .copyright { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 13px; color: #666; }
+
+        /* --- FLOATING WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px; height: 60px;
+            bottom: 30px; right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
+
+        /* --- MODAL --- */
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
+        .modal-content { background: white; width: 90%; max-width: 450px; padding: 40px; border-radius: 5px; position: relative; animation: slideUp 0.4s; }
+        @keyframes slideUp { from {transform: translateY(50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #aaa; }
+        .form-input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+        .modal-btn { width: 100%; padding: 12px; background: var(--primary-blue); color: white; border: none; font-weight: 700; border-radius: 4px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 15px; }
+            .contact-info { display: none; }
+            
+            nav { justify-content: space-between; height: 60px; padding: 0 20px; }
+            .menu-toggle { display: block; }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; left: 0; width: 100%;
+                background: white;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                height: auto;
+                padding-bottom: 20px;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li a { width: 100%; text-align: center; border-bottom: 1px solid #eee; }
+            .appt-btn-nav { width: 90%; margin: 15px auto; }
+            
+            .hero { text-align: center; background-attachment: scroll; } 
+            .hero-content h2 { font-size: 32px; }
+            
+            .intro { grid-template-columns: 1fr; gap: 30px; }
+            .testi-card.featured { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo-section">
+            <h1><i class="fas fa-tooth" style="color:var(--primary-blue);"></i> Simalti<br>Dentals</h1>
+            <span>The Dental Clinic</span>
+        </div>
+        <div class="contact-info">
+            <a href="tel:+919557080133" class="contact-item">
+                <i class="fas fa-phone-volume"></i>
+                <div class="contact-text">
+                    <h4>Call Us</h4>
+                    <p>+91 95570 80133</p>
+                </div>
+            </a>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-text">
+                    <h4>Location</h4>
+                    <p>Mehuwala, Dehradun</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div style="font-weight:700; color:var(--dark-blue); font-size:18px;" class="mobile-logo-text">MENU</div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+            <li><a href="#testimonials" onclick="toggleMenu()">Reviews</a></li>
+            <li><a href="#footer" onclick="toggleMenu()">Contact</a></li>
+            <li><button class="appt-btn-nav" onclick="openModal()">Book Appointment</button></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Experience World-Class<br>Dental Care in <span>Dehradun</span></h2>
+            <p style="font-size:18px; color:#555; margin-bottom:30px;">Creating healthy smiles since <strong>2020</strong> with advanced technology and a gentle touch.</p>
+            <button class="hero-btn" onclick="openModal()">Schedule Visit <i class="fas fa-arrow-right" style="margin-left:10px;"></i></button>
+        </div>
+    </section>
+
+    <section class="intro" id="about">
+        <div class="intro-img">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Simalti Dental Clinic Interior">
+        </div>
+        <div class="intro-text">
+            <h2>Welcome to Simalti Dental Clinic</h2>
+            <div style="width:50px; height:3px; background:var(--primary-blue); margin-bottom:20px;"></div>
+            <p>Located at <strong>Mehuwala Mafi, Shimla Bypass, Gali near Chaihan</strong>, Simalti Dentals is Dehradun’s premier destination for advanced dental care.</p>
+            <p>Established in <strong>2020</strong>, Dr. Simalti and his team have been dedicated to providing painless and effective treatments in a hygienic environment. We specialize in root canals, cosmetic dentistry, and dental implants.</p>
+            
+            <div class="query-box">
+                <h3><i class="far fa-question-circle"></i> HAVE A QUESTION?</h3>
+                <p>Get a free consultation & smile analysis today.</p>
+                <button class="enquire-btn" onclick="openModal()">Enquire Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">Our Dental Services</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Root Canal Treatment">
+                <div class="service-info">
+                    <h3>Root Canal Treatment</h3>
+                    <p>Save your natural teeth with our painless, single-sitting root canal therapy using the latest rotary instruments.</p>
+                    <span class="read-more" onclick="openModal()">Book Consultation <i class="fas fa-angle-right"></i></span>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pediatric Dentistry">
+                <div class="service-info">
+                    <h3>Pediatric Dentistry</h3>
+                    <p>Specialized care for your little ones. We focus on preventive care and habit breaking in a child-friendly environment.</p>
+                    <span class="read-more" onclick="openModal()">Book Consultation <i class="fas fa-angle-right"></i></span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1478474520990-b6bb44546c1b?auto=format&fit=crop&w=800&q=80" alt="Dental Implants">
+                <div class="service-info">
+                    <h3>Dental Implants</h3>
+                    <p>The best solution for missing teeth. Our titanium implants look, feel, and function exactly like natural teeth.</p>
+                    <span class="read-more" onclick="openModal()">Book Consultation <i class="fas fa-angle-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Clinic Gallery</h2>
+        <div class="underline"></div>
+        <p style="margin-top:15px; color:#666;">A glimpse into our state-of-the-art facility.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&q=80" alt="Clinic Chair"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1598256989494-03638104e700?auto=format&fit=crop&w=600&q=80" alt="Dental Tools"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Doctor Working"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Patient Smiling"></div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Patient Stories</h2>
+        <div class="underline"></div>
+        <br><br>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <img src="https://flagcdn.com/w80/in.png" class="flag-img" alt="India">
+                <p>"I live near Mehuwala and found this gem. Dr. Simalti was extremely professional and the root canal was absolutely painless."</p>
+                <span class="client-name">Rajesh Kumar</span>
+                <span class="client-loc">Dehradun, UK</span>
+            </div>
+
+            <div class="testi-card featured">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <img src="https://flagcdn.com/w80/us.png" class="flag-img" alt="USA">
+                <p>"I traveled to Dehradun for my dental implants. The cost was reasonable, and the quality is world-class. Highly recommended!"</p>
+                <span class="client-name">Emily Watson</span>
+                <span class="client-loc">California, USA</span>
+            </div>
+
+            <div class="testi-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <img src="https://flagcdn.com/w80/au.png" class="flag-img" alt="Australia">
+                <p>"The hygiene standards at Shimla Bypass branch are impeccable. Best dental clinic in Dehradun hands down."</p>
+                <span class="client-name">David Smith</span>
+                <span class="client-loc">Sydney, Australia</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-logo">
+                <h2><i class="fas fa-tooth"></i> SIMALTI DENTALS</h2>
+                <p>We combine art and science to create healthy, beautiful smiles. Visit us at our Mehuwala clinic for a comprehensive dental experience.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Treatments</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Patient Reviews</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-details">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Simalti Dental Clinic,<br>Mehuwala Mafi, Shimla Bypass,<br>Gali near Chaihan,<br>Dehradun, Uttarakhand 248018</p>
+                <p><a href="tel:+919557080133"><i class="fas fa-phone"></i> +91 95570 80133</a></p>
+                <p><a href="https://wa.me/919557080133"><i class="fab fa-whatsapp"></i> +91 95570 80133</a></p>
+                <p><i class="far fa-clock"></i> Mon - Sat: 10:00 AM - 7:00 PM</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Find Us Here</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.789369524023!2d77.9967!3d30.3000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39092be6b4f7063f%3A0x6d923053703277!2sShimla%20Bypass%20Rd%2C%20Dehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1689000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 Simalti Dental Clinic. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919557080133?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 style="color:var(--dark-blue); margin-bottom:20px; text-align:center;">Book Appointment</h2>
+            
+            <form id="bookingForm" onsubmit="event.preventDefault(); sendToWhatsapp();">
+                <input type="text" id="booking-name" class="form-input" placeholder="Patient Name" required>
+                <input type="tel" id="booking-phone" class="form-input" placeholder="Phone Number" required>
+                <select id="booking-service" class="form-input">
+                    <option value="General Consultation">General Consultation</option>
+                    <option value="Root Canal">Root Canal</option>
+                    <option value="Dental Implant">Dental Implant</option>
+                    <option value="Kids Dentistry">Kids Dentistry</option>
+                    <option value="Other">Other</option>
+                </select>
+                <textarea id="booking-message" class="form-input" rows="3" placeholder="Describe your problem (Optional)"></textarea>
+                <button type="submit" class="modal-btn"><i class="fab fa-whatsapp"></i> Book via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+        }
+
+        function openModal() {
+            document.getElementById("bookingModal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("bookingModal").style.display = "none";
+        }
+        
+        window.onclick = function(e) {
+            const modal = document.getElementById("bookingModal");
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function sendToWhatsapp() {
+            const name = document.getElementById('booking-name').value;
+            const phone = document.getElementById('booking-phone').value;
+            const service = document.getElementById('booking-service').value;
+            const message = document.getElementById('booking-message').value;
+            const whatsappNumber = "919557080133";
+
+            let text = `*New Appointment Request*\n\n`;
+            text += `*Name:* ${name}\n`;
+            text += `*Phone:* ${phone}\n`;
+            text += `*Service:* ${service}\n`;
+            if(message) text += `*Message:* ${message}`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+            document.getElementById('bookingForm').reset();
+        }
+    </script>
+
+</body>
+</html>
